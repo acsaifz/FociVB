@@ -40,5 +40,8 @@ class PrimeTest {
         assertTrue(Prime.isPrime(2147483647));
     }
 
-
+    @Test
+    void test_isPrime_4(){
+        assertFalse(Prime.isPrime(4));
+    }
 }
