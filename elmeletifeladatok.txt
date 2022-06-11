@@ -1,0 +1,64 @@
+A választható feladatok közül a kompozíciót választottam.
+
+1, feladat:
+Ezt nem tudom megfogalmazni.
+
+2, feladat: Iterator használata segítségével végigjárva a kollekciót, az egyes elemekett ki lehet törölni.
+A következő kód például kitörli a páros számokat a kollekcióból:
+
+public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(45);
+        numbers.add(15);
+        numbers.add(39);
+        numbers.add(55);
+        numbers.add(13);
+        numbers.add(12);
+        numbers.add(8);
+        numbers.add(94);
+        Iterator<Integer> iterator = numbers.iterator();
+        while(iterator.hasNext()) {
+            Integer i = iterator.next();
+            if(i % 2 == 0) {
+                iterator.remove();
+            }
+        }
+    }
+
+
+3, feladat:
+
+OOP koncepciók:
+
+- Öröklődés: A gyerekosztály megörökli az anyaosztály public metódusait és fieldjeit
+A java-ban minden osztály az Object osztályból öröklődik
+Többszörös öröklődés nincs(azonban interface-ből lehet többet is implementálni), de láncöröklődés megvalósítható
+
+- Polimorfizmus: Többalakúság. Több metódusnak ugyanaz a neve, azonban ezek mást csinálnak.
+Két változata van az overloading és az overriding.
+Overloading amikor ugyannak a metódusnak különböző típusú vagy számú bemeneti paramétere van.
+Overriding amikor öröklődés esetén a szülőosztály(vagy absztrakt osztály, interface) metódusát a gyerekosztályban "felülírunk", más funkciót adunk neki az eredetihez képest.
+
+- Asszociáció: az objektumok közötti kapcsolatot határozza meg
+
+- Enkapszuláció: minden osztály rejtse el a belső dolgait a többi osztály elől(fieldeket) és csak publikus metódusokon keresztül lehessen azokat megváltoztatni(getterek és setterek).
+
+- Absztrakció: Az absztrakció fő célja a felesleges részletek elrejtése a felhasználó elől, és csak a funkcionalitás legyen látható.
+Megvalósítása absztrakt osztállyal és interface-k használatával
+
+4, feladat:
+TreeSet segítségével el lehet érni, hogy a beolvasott meccsek adatait dátum szerint rendezze sorba.
+Ennek feltétele az hogy a Match osztályban implementálva legyen a Comparable interfész és kötelező megvalósítani a CompareTo metódus felülírását.
+
+public class Match implements Comparable<Match>{
+
+    @Override
+        public int compareTo(Match o) {
+            if (date.isBefore(o.getDate())){
+                return -1;
+            }else{
+                return 1;
+            }
+        }
+    }
+}
